@@ -1,5 +1,7 @@
-angular.module('NoteWrangler').controller('NoteEditController', function(Note, $scope, $routeParams, $location) {
-    $scope.note = Note.get({id: $routeParams.id})
+angular.module('NoteWrangler').controller('NoteEditController', function(Note, Category, $scope, $routeParams, $location) {
+    $scope.note = Note.get({id: $routeParams.id});
+    $scope.isSubmitting = false;
+    $scope.categories = Category.query();
 
     $scope.saveNote = function(note) {
     	// Prevent click on submit button when saving
