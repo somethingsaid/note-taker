@@ -6,21 +6,29 @@ angular.module('NoteWrangler').config(function($routeProvider) {
 
         .when('/notes', {
         	templateUrl: "assets/templates/notes/index.html",
-        	controller: "NotesIndexController"
+        	controller: "NoteIndexController"
         })
         .when('/notes/new', {
         	templateUrl: "assets/templates/notes/new.html",
-        	controller: "NotesCreateController"
+        	controller: "NoteCreateController"
         })
         .when('/notes/:id', {
         	templateUrl: "assets/templates/notes/show.html",
-        	controller: "NotesShowController"
+        	controller: "NoteShowController"
         })
         .when('/notes/:id/edit', {
         	templateUrl: "assets/templates/notes/edit.html",
-        	controller: "NotesEditController"
+        	controller: "NoteEditController"
+        })
+        .when('/users', {
+            templateUrl: "assets/templates/users/index.html",
+            controller: "UserEditController"
+        })
+        .when('/users/:id', {
+            templateUrl: "assets/templates/users/index.html",
+            controller: "UserShowController"
         })
         .otherwise( {
-        	redirectTo: '/notes'
+        	template: "<h1>404 Page Not Found</h1>"
         })
 });
